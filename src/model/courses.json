@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Adabiyot",
+        "description": "Adabiyot kursi",
+        "cost": "50 000 so'm"
+    },
+    {
+        "id": 2,
+        "name": "Ona tili ",
+        "description": "Ona tili kursi",
+        "cost": "900 000 000 000 so'm"
+    },
+    {
+        "id": 3,
+        "name": "Node js",
+        "description": "Node js kursi",
+        "cost": "500000 so'm"
+    },
+    {
+        "id": 4,
+        "name": "Kimyo",
+        "description": "Kimyo kursi",
+        "cost": "50 000 so'm"
+    }
+]

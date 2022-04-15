@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+     <!--== META TAGS ==-->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <!--== FAV ICON ==-->
+     <!-- GOOGLE FONTS -->
+     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+
+     <!-- FONT-AWESOME ICON CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+     <!--== ALL CSS FILES ==-->
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/mob.css">
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <link rel="stylesheet" href="css/materialize.css" />
+
+<body>
+
+     <!--== BODY CONTNAINER ==-->
+     <div class="container-fluid sb2">
+          <div class="row">
+               <div class="sb2-1">
+                    <!--== USER INFO ==-->
+                    <div class="sb2-12">
+                         <button id="logout">Log out</button>
+                         <ul>
+                              <li><img src="images/placeholder.jpg" alt="">
+                              </li>
+                              <li>
+                                   <h5>Muzaffarbek <span>/admin</span></h5>
+                              </li>
+                              <li></li>
+                         </ul>
+                    </div>
+                    <!--== LEFT MENU ==-->
+                    <div class="sb2-13">
+                         <ul class="collapsible" data-collapsible="accordion">
+                              <li><a class="collapsible-header" id="teachers-btn"><i
+                                             class="fa-solid fa-chalkboard-user"></i>
+                                        O'qituvchilar</a></li>
+                              <li><a href="javascript:void(0)" id="students-btn" class="collapsible-header"><i
+                                             class="fa-solid fa-graduation-cap"></i> O'quvchilar</a></li>
+                              <li><a href="javascript:void(0)" id="groups-btn" class="collapsible-header"><i
+                                             class="fa-solid fa-users-between-lines"></i> Guruhlar</a></li>
+                              <li><a href="javascript:void(0)" id="courses-btn" class="collapsible-header"><i
+                                             class="fa-brands fa-discourse"></i> Kurslar</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="sb2-2">
+
+
+
+
+                    <div class="sb2-2-3">
+                         <div class="row">
+                              <div class="col-md-12">
+
+
+                                   <!-- O'qituvchilar -->
+                                   <div class="box-inn-sp teachers-list none">
+
+                                        <div class="modals">
+                                             <form action="/admin" enctype="application/x-www-form-urlencoded"
+                                                  method="POST">
+                                                  <div class="d-flex">
+                                                       <h1>Yangi o'qituvchi qo'shish</h1>
+                                                       <input type="text" name="name" id="add-input"
+                                                            placeholder="O'qituvchining ismi">
+                                                       <input type="text" name="phone" id="add-input"
+                                                            placeholder="O'qituvchining telefon raqami">
+                                                       <label>
+                                                            <input type="radio" name="gender" value="male" />
+                                                            <span>Erkak</span>
+                                                       </label>
+                                                       <label>
+                                                            <input type="radio" name="gender" value="female" />
+                                                            <span>Ayol</span>
+                                                       </label>
+                                                       <div class="custom-select">
+                                                            <select id="course" name="course">
+                                                                 <option value="0" selected disabled>Kursning tanlang:
+                                                                 </option>
+                                                                 <% courses.map(e=> { %>
+                                                                      <option value="<%=e.name%>">
+                                                                           <%= e.name %>
+                                                                      </option>
+                                                                      <% }) %>
+                                                            </select>
+                                                       </div>
+                                                       <div class="flex">
+                                                            <button type="submit" class="submit-btn">Submit</button>
+                                                            <button class="close-btn">Close</button>
+                                                       </div>
+                                                  </div>
+                                             </form>
+                                        </div>
+
+                                        <div class="inn-title">
+                                             <h4>O'qituvchilar</h4>
+                                             <a class="dropdown-button drop-down-meta" data-activates="dr-users"
+                                                  id="add-teacher"><i class="material-icons">Yangi
+                                                       o'qituvchi qo'shish</i></a>
+                                             <!-- Dropdown Structure -->
+
+                                        </div>
+                                        <div class="tab-inn">
+                                             <div class="table-responsive table-desi">
+                                                  <table class="table table-hover">
+                                                       <thead>
+                                                            <tr>
+                                                                 <th>Name</th>
+                                                                 <th>Phone Number</th>
+                                                                 <th>Gender</th>
+                                                                 <th>Course</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <div class="items">
+                                                            <% teachers.map( e=> { %>
+                                                                 <tr class="flex">
+                                                                      <td>
+                                                                           <%= e.username %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.phoneNumber %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.gender %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.course %>
+                                                                      </td>
+                                                                 </tr>
+                                                                 <% }) %>
+                                                       </div>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+
+
+                                   <!-- O'quvchilar -->
+                                   <div class="box-inn-sp students-list none">
+
+                                        <div class="modals-s">
+                                             <form action="/adminS" enctype="application/x-www-form-urlencoded"
+                                                  method="POST">
+                                                  <div class="d-flex">
+                                                       <h1>Yangi o'quvchi qo'shish</h1>
+
+                                                       <input type="text" name="name" id="add-input"
+                                                            placeholder="O'quvchining ismi">
+
+                                                       <input type="text" name="phone" id="add-input"
+                                                            placeholder="O'quvchining telefon raqami">
+
+                                                       <label>
+                                                            <input type="radio" name="gender" value="male" />
+                                                            <span>Erkak</span>
+                                                       </label>
+                                                       <label>
+                                                            <input type="radio" name="gender" value="female" />
+                                                            <span>Ayol</span>
+                                                       </label>
+
+                                                       <div class="custom-select">
+                                                            <select id="course" name="course" onchange="courseChange(this)">
+                                                                 <option value="0" selected disabled>Kursning tanlang:
+                                                                 </option>
+                                                                 <% courses.map(e=> { %>
+                                                                      <option value="<%=e.name%>">
+                                                                           <%= e.name %>
+                                                                      </option>
+                                                                      <% }) %>
+                                                            </select>
+                                                       </div>
+
+                                                       <div class="custom-select">
+                                                            <select id="group" name="group" class="chooseGroup">
+                                                                 <option value="0" selected disabled>Guruhni tanlang:
+                                                                 </option>
+                                                                
+                                                            </select>
+                                                       </div>
+
+                                                       <div class="flex">
+                                                            <button type="submit" class="submit-btn">Submit</button>
+                                                            <button class="closes-btn">Close</button>
+                                                       </div>
+                                                  </div>
+                                             </form>
+                                        </div>
+
+                                        <div class="inn-title">
+                                             <h4>O'quvchilar</h4>
+                                             <a class="dropdown-button drop-down-meta" data-activates="dr-users"
+                                                  id="add-student"><i class="material-icons">Yangi
+                                                       o'quvchi qo'shish</i></a>
+                                             <!-- Dropdown Structure -->
+
+                                        </div>
+                                        <div class="tab-inn">
+                                             <div class="table-responsive table-desi">
+                                                  <table class="table table-hover">
+                                                       <thead>
+                                                            <tr>
+                                                                 <th>Name</th>
+                                                                 <th>Phone Number</th>
+                                                                 <th>Gender</th>
+                                                                 <th>Course</th>
+                                                                 <th>Group</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <div class="items">
+                                                            <% students.map( e=> { %>
+                                                                 <tr class="flex">
+                                                                      <td>
+                                                                           <%= e.username %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.phoneNumber %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.gender %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.course %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.group %>
+                                                                      </td>
+                                                                 </tr>
+                                                                 <% }) %>
+                                                       </div>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+
+
+                                   <!-- Groups -->
+                                   <div class="box-inn-sp groups-list none">
+
+                                        <div class="modals modals-g">
+                                             <form action="/adminG" enctype="application/x-www-form-urlencoded"
+                                                  method="POST">
+                                                  <div class="d-flex">
+                                                       <h1>Yangi guruh qo'shish</h1>
+                                                       <input type="text" name="name" id="add-input"
+                                                            placeholder="Guruhning nomi">
+
+                                                       <div class="custom-select">
+                                                            <select id="course" name="course" onchange="changed(this)">
+                                                                 <option value="0" selected disabled>Kursning tanlang:
+                                                                 </option>
+                                                                 <% courses.map(e=> { %>
+                                                                      <option value="<%=e.name%>">
+                                                                           <%= e.name %>
+                                                                      </option>
+                                                                      <% }) %>
+                                                            </select>
+                                                       </div>
+
+                                                       <div class="custom-select">
+                                                            <select id="teacher" name="teacher">
+                                                                 <option value="0" selected disabled>Ustozni tanlang:
+                                                                 </option>
+                                                                 
+                                                            </select>
+                                                       </div>
+                                                       <div class="flex">
+                                                            <button type="submit" class="submit-btn">Submit</button>
+                                                            <button class="closeG-btn">Close</button>
+                                                       </div>
+                                                  </div>
+                                             </form>
+                                        </div>
+
+                                        <div class="inn-title">
+                                             <h4>Guruhlar</h4>
+                                             <a class="dropdown-button drop-down-meta" data-activates="dr-users"
+                                                  id="add-group"><i class="material-icons">Yangi
+                                                       guruh qo'shish</i></a>
+                                             <!-- Dropdown Structure -->
+
+                                        </div>
+                                        <div class="tab-inn">
+                                             <div class="table-responsive table-desi">
+                                                  <table class="table table-hover">
+                                                       <thead>
+                                                            <tr>
+                                                                 <th>Guruh nomi</th>
+                                                                 <th>Kurs nomi</th>
+                                                                 <th>O'qituvchi</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <div class="items">
+                                                            <% groups.map( e=> { %>
+                                                                 <tr class="flex">
+                                                                      <td>
+                                                                           <%= e.name %>
+                                                                      </td>
+
+                                                                      <td>
+                                                                           <%= e.course %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.teacher %>
+                                                                      </td>
+                                                                 </tr>
+                                                                 <% }) %>
+                                                       </div>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+
+
+                                   <!-- Courses -->
+                                   <div class="box-inn-sp courses-list none">
+
+                                        <div class="modals-c">
+                                             <form action="/adminC" enctype="application/x-www-form-urlencoded"
+                                                  method="POST">
+                                                  <div class="d-flex">
+                                                       <h1>Yangi kurs qo'shish</h1>
+                                                       <input type="text" name="name" id="add-input"
+                                                            placeholder="Kursning nomi">
+                                                       <input type="text" name="description" id="add-input"
+                                                            placeholder="Kursning tasnifi">
+                                                       <input type="text" name="cost" id="add-input"
+                                                            placeholder="Kursning narxi">
+                                                       <div class="flex">
+                                                            <button type="submit" class="submit-btn">Submit</button>
+                                                            <button class="closesC-btn">Close</button>
+                                                       </div>
+                                                  </div>
+                                             </form>
+                                        </div>
+
+                                        <div class="inn-title">
+                                             <h4>Kurslar</h4>
+                                             <a class="dropdown-button drop-down-meta" data-activates="dr-users"
+                                                  id="add-course"><i class="material-icons">Yangi
+                                                       kurs qo'shish</i></a>
+                                             <!-- Dropdown Structure -->
+
+                                        </div>
+                                        <div class="tab-inn">
+                                             <div class="table-responsive table-desi">
+                                                  <table class="table table-hover">
+                                                       <thead>
+                                                            <tr>
+                                                                 <th>Kursning nomi</th>
+                                                                 <th>Kursning tasnifi</th>
+                                                                 <th>Narxi</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <div class="items">
+                                                            <% courses.map( e=> { %>
+                                                                 <tr class="flex">
+                                                                      <td>
+                                                                           <%= e.name %>
+                                                                      </td>
+
+                                                                      <td>
+                                                                           <%= e.description %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.cost %>
+                                                                      </td>
+                                                                 </tr>
+                                                                 <% }) %>
+                                                       </div>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+
+
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+
+          </div>
+     </div>
+     </div>
+
+
+
+     <!--== BOTTOM FLOAT ICON ==-->
+
+
+     <!--======== SCRIPT FILES =========-->
+     <script src="js/script.js"></script>
+</body>
+
+</html>

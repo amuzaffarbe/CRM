@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>Lava Material - Web Application and Website Multipurpose Admin Panel Template</title>
+     <!--== META TAGS ==-->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <!--== FAV ICON ==-->
+     <!-- GOOGLE FONTS -->
+     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700" rel="stylesheet">
+
+     <!-- FONT-AWESOME ICON CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+     <!--== ALL CSS FILES ==-->
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/mob.css">
+     <link rel="stylesheet" href="css/bootstrap.css">
+     <link rel="stylesheet" href="css/materialize.css" />
+
+<body>
+
+     <!--== BODY CONTNAINER ==-->
+     <div class="container-fluid sb2">
+          <div class="row">
+               <div class="sb2-1">
+                    <!--== USER INFO ==-->
+                    <div class="sb2-12">
+                         <button id="logout">Log out</button>
+                         <ul>
+                              <li><img src="images/placeholder.jpg" alt="">
+                              </li>
+                              <li>
+                                   <h5>
+                                        <%= foundUser.username %> <span>/student - <%= foundUser.role%></span>
+                                   </h5>
+                              </li>
+                              <li></li>
+                         </ul>
+                    </div>
+                    <!--== LEFT MENU ==-->
+                    <div class="sb2-13">
+                         <ul class="collapsible" data-collapsible="accordion">
+                                   <li><a href="javascript:void(0)" id="groups-btn" class="collapsible-header"><i
+                                             class="fa-solid fa-users-between-lines"></i> Guruhlar</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <div class="sb2-2">
+
+
+
+
+                    <div class="sb2-2-3">
+                         <div class="row">
+                              <div class="col-md-12">
+
+                                   <!-- Groups -->
+                                   <div class="box-inn-sp groups-list">
+
+                                        <div class="inn-title">
+                                             <h4>Guruhlar</h4>
+
+                                        </div>
+                                        <div class="tab-inn">
+                                             <div class="table-responsive table-desi">
+                                                  <table class="table table-hover">
+                                                       <thead>
+                                                            <tr>
+                                                                 <th>Kurs nomi</th>
+                                                                 <th>Guruh nomi</th>
+                                                                 <th>O'qituvchi</th>
+                                                                 <th>Vazifani ko'rish</th>
+                                                            </tr>
+                                                       </thead>
+                                                       <div class="items">
+                                                            <% groups.map( e=> { %>
+                                                                 <tr class="flex">
+                                                                      <td>
+                                                                           <%= e.course %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.name %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <%= e.teacher %>
+                                                                      </td>
+                                                                      <td>
+                                                                           <button class="vazifa">Vazifani
+                                                                                ko'rish</button>
+                                                                      </td>
+                                                                 </tr>
+                                                                 <% }) %>
+                                                       </div>
+                                                  </table>
+                                             </div>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+
+          </div>
+     </div>
+     </div>
+
+
+
+     <!--== BOTTOM FLOAT ICON ==-->
+
+
+     <!--======== SCRIPT FILES =========-->
+     <!-- <script src="js/script.js"></script> -->
+     <script>
+          let logout = document.getElementById("logout")
+          logout.addEventListener("click", () => {
+               var c = document.cookie.split("; ");
+               for (i in c)
+                    document.cookie = /^[^=]+/.exec(c[i])[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+               window.location.reload()
+          })
+     </script>
+</body>
+
+</html>

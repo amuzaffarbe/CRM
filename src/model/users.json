@@ -1,0 +1,95 @@
+[
+    {
+        "id": 1,
+        "username": "Muzaffarbek",
+        "password": "7777",
+        "phoneNumber": "998994583368",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "username": "Haqberdiyeva",
+        "password": "998995555555",
+        "role": "teacher",
+        "phoneNumber": "998995555555",
+        "gender": "female",
+        "course": "Adabiyot"
+    },
+    {
+        "id": 3,
+        "username": "Dilshod",
+        "password": "998996666666",
+        "role": "student",
+        "phoneNumber": "998996666666",
+        "gender": "male",
+        "course": "Adabiyot",
+        "group": "Adabiyot gr"
+    },
+    {
+        "id": 4,
+        "username": "Rozivoy",
+        "password": "998994555522",
+        "role": "teacher",
+        "phoneNumber": "998994555522",
+        "gender": "male",
+        "course": "Ona tili "
+    },
+    {
+        "id": 5,
+        "username": "Muzaffar",
+        "password": "998996665555",
+        "role": "student",
+        "phoneNumber": "998996665555",
+        "gender": "male",
+        "course": "Ona tili ",
+        "group": "ona tili gr"
+    },
+    {
+        "id": 6,
+        "username": "Genrofer",
+        "password": "998994556622",
+        "role": "student",
+        "phoneNumber": "998994556622",
+        "gender": "male",
+        "course": "Ona tili ",
+        "group": "ona tili gr"
+    },
+    {
+        "id": 7,
+        "username": "Baxtiyor",
+        "password": "998995555555",
+        "role": "teacher",
+        "phoneNumber": "998995555555",
+        "gender": "male",
+        "course": "Node js"
+    },
+    {
+        "id": 8,
+        "username": "Otabek",
+        "password": "998997777777",
+        "role": "student",
+        "phoneNumber": "998997777777",
+        "gender": "male",
+        "course": "Node js",
+        "group": "Node js gruppasi"
+    },
+    {
+        "id": 9,
+        "username": "Shahzod",
+        "password": "998995555555",
+        "role": "teacher",
+        "phoneNumber": "998995555555",
+        "gender": "male",
+        "course": "Kimyo"
+    },
+    {
+        "id": 10,
+        "username": "Ali",
+        "password": "998995556655",
+        "role": "student",
+        "phoneNumber": "998995556655",
+        "gender": "male",
+        "course": "Kimyo",
+        "group": "Kimyo gruppasi"
+    }
+]

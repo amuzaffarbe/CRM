@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Adabiyot gr",
+        "course": "Adabiyot",
+        "teacher": "Haqberdiyeva"
+    },
+    {
+        "id": 2,
+        "name": "ona tili gr",
+        "course": "Ona tili ",
+        "teacher": "Rozivoy"
+    },
+    {
+        "id": 3,
+        "name": "Node js gruppasi",
+        "course": "Node js",
+        "teacher": "Baxtiyor"
+    },
+    {
+        "id": 4,
+        "name": "Node js 2",
+        "course": "Node js",
+        "teacher": "Baxtiyor"
+    },
+    {
+        "id": 5,
+        "name": "Kimyo gruppasi",
+        "course": "Kimyo",
+        "teacher": "Shahzod"
+    }
+]
