@@ -34,4 +34,4 @@ app.post("/adminG", Admin.GroupPOST)
 app.post("/adminC", Admin.CoursePOST)
 
 
-app.listen(process.env.PORT || 9000, console.log(9000))
+app.listen(process.env.PORT || 9000)
